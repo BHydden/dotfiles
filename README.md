@@ -6,6 +6,6 @@ Setup from clean install
 apt-get install git
 apt-get install curl
 git clone https://github.com/BHydden/dotfiles.git ~
-git clone https://github.com/VimVundle/Vundle.vim.git ~/.vim/bundles/Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim :PluginsInstall :qall
 ```
