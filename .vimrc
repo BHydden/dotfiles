@@ -98,7 +98,5 @@ let g:gruvbox_italic=1 "enables italics
 colorscheme gruvbox
 set background=dark "setting dark mode
 
-" Set Colorscheme
-"colorscheme spacecamp_lite
-"set background=dark
-
+" bind open NERDTree
+map <C-n> :NERDTreeToggle<CR>
