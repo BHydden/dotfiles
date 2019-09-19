@@ -18,6 +18,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'morhetz/gruvbox'
 Plugin 'leafgarland/typescript-vim'
+"Plugin 'jaxbot/syntastic-react'
+"Plugin 'yannickcr/eslint-plugin-react'
+Plugin 'takac/vim-hardtime'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -98,5 +101,60 @@ let g:gruvbox_italic=1 "enables italics
 colorscheme gruvbox
 set background=dark "setting dark mode
 
-" bind open NERDTree
-map <C-n> :NERDTreeToggle<CR>
+" bindings
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Syntastic settings
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['eslint']
+"set signcolumn=yes
+
+" Finding Files:
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" Now We Can:
+"   Hit tab to :find by partial match
+"   Use * to make it fuzzy
+
+" Things To Consider:
+"  - :b lets you autocomplete any open buffer
+
+" Tag Jumping:
+
+" Create the 'tags' file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
+" Now We Can:
+"   Use ^] to jump to tag under cursor
+"   Use g^] for ambiguous tags
+"   Use ^t to jump back up the tag stack
+"
+" Things To Remember:
+"   This doesn't help if you want a visual list of tags
+"
+" Autocomplete:
+"   The good stuff is documented in |ins-completion|
+"
+" Highlights:
+"   ^x^n for JUST this file
+"   ^x^f for filenames (works with our path trick!)
+"   ^x^] for tags only
+"   ^p for anything specified by the 'complete' option
+"
+" Hardtime Settings:
+let g:hardtime_default_on = 1
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 2
