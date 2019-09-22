@@ -15,12 +15,14 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'morhetz/gruvbox'
 Plugin 'leafgarland/typescript-vim'
 "Plugin 'jaxbot/syntastic-react'
 "Plugin 'yannickcr/eslint-plugin-react'
 Plugin 'takac/vim-hardtime'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'christoomey/vim-tmux-navigator'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -60,6 +62,11 @@ augroup  numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
+augroup linehighlight
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#111111
+  autocmd BufEnter * match OverLength /\%75v.*/
 augroup END
 
 "Always show current position
