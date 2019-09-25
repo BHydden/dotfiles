@@ -69,8 +69,11 @@ augroup linehighlight
   autocmd BufEnter * match OverLength /\%75v.*/
 augroup END
 
-"Always show current position
+" Always show current position
 set ruler
+
+" Do Not Recognise Octal Numbers for C-A and C-X
+set nrformats-=octal
 
 " Height of the command bar
 set cmdheight=2
