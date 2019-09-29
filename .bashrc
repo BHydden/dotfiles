@@ -28,3 +28,5 @@
   fi
 
   source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

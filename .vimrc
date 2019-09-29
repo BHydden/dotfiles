@@ -18,11 +18,17 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'morhetz/gruvbox'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'ianks/vim-tsx'
 "Plugin 'jaxbot/syntastic-react'
 "Plugin 'yannickcr/eslint-plugin-react'
 Plugin 'takac/vim-hardtime'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-commentary'
+Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'dense-analysis/ale'
+Plugin 'Quramy/tsuquyomi'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -117,6 +123,32 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap ]r :ALENextWrap<CR>            " move to the next ALE warning / error
+nnoremap [r :ALEPreviousWrap<CR>        " move to the previous ALE warning / error
+
+" Prettier FORMATTERS
+au FileType javascript setlocal formatprg=prettier
+au FileType javascript.jsx setlocal formatprg=prettier
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType html setlocal formatprg=js-beautify\ --type\ html
+au FileType scss setlocal formatprg=prettier\ --parser\ css
+au FileType css setlocal formatprg=prettier\ --parser\ css
+
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'typescript': ['tasserver', 'tslint'],
+\ 'vue': ['eslint']
+\}
+
+let g:ale_fixers = {
+  \     'javascript': ['eslint'],
+  \     'typescript': ['prettier', 'tslint'],
+  \     'vue': ['eslint'],
+  \     'scss': ['prettier'],
+  \     'html': ['prettier']
+\}
+let g:ale_fix_on_save = 1
+
 
 " Syntastic settings
 "let g:syntastic_always_populate_loc_list = 1
@@ -168,3 +200,4 @@ command! MakeTags !ctags -R .
 let g:hardtime_default_on = 1
 let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
+
