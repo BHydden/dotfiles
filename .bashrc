@@ -18,6 +18,29 @@
 # alias mv='mv -i'
 
   alias tmux="TERM=screen-256color-bce tmux"
+  alias MIT="npm install -g yarn && yarn install && npm run dev"
+  alias g="git"
+  # Git Aliases
+  alias ga="git add"
+  alias gaa="git add ."
+  alias gb="git branch"
+  alias gbd="git branch --delete"
+  alias gc="git commit -m"
+  alias gcs="git commit -S -m"
+  alias gco="git checkout"
+  alias gcob="git checkout -b"
+  alias gcod="git checkout devel"
+  alias gd="git diff"
+  alias gf="git fetch"
+  alias gfu="git fetch upstream"
+  alias gm="git merge"
+  alias gpl="git pull"
+  alias gplu="git pull upstream"
+  alias gps="git push"
+  alias gpsu="git push"
+  alias gs="git status"
+  alias gst="git stash"
+
 
   GPG_TTY=$(tty)
   export GPG_TTY

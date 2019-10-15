@@ -147,7 +147,7 @@ let g:ale_fixers = {
   \     'scss': ['prettier'],
   \     'html': ['prettier']
 \}
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 
 
 " Syntastic settings
@@ -156,7 +156,7 @@ let g:ale_fix_on_save = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_javascript_checkers = ['eslint']
-"set signcolumn=yes
+set signcolumn=yes
 
 " Finding Files:
 
