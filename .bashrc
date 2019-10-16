@@ -23,6 +23,7 @@
   # Git Aliases
   alias ga="git add"
   alias gaa="git add ."
+  alias gau="git add -u"
   alias gb="git branch"
   alias gbd="git branch --delete"
   alias gc="git commit -m"
