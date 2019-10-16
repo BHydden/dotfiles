@@ -3,9 +3,7 @@
 Setup from clean install 
 
 ```bash
-apt install git
-apt install curl
-apt install vim
+apt install git curl vim tmux
 
 git clone https://github.com/BHydden/dotfiles.git ~/dotfiles
 
